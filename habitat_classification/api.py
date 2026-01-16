@@ -8,13 +8,23 @@ The server will start on http://0.0.0.0:4321
 """
 
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Depends
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 from model import predict
 from utils import decode_patch
 
 HOST = "0.0.0.0"
 PORT = 4321
+
+security = HTTPBearer()
+
+
+def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    """Verify the bearer token."""
+    if credentials.credentials != "abc123":
+        raise HTTPException(status_code=401, detail="Invalid authentication token")
+    return credentials.credentials
 
 
 class PredictRequest(BaseModel):
@@ -34,14 +44,16 @@ app = FastAPI(
 )
 
 
+
+
 @app.get("/")
-def index():
+def index(token: str = Depends(verify_token)):
     """Health check endpoint."""
     return {"status": "running", "message": "Habitat Classification API"}
 
 
 @app.get("/api")
-def api_info():
+def api_info(token: str = Depends(verify_token)):
     """API information endpoint."""
     return {
         "service": "habitat-classification",
@@ -55,7 +67,7 @@ def api_info():
 
 
 @app.post("/predict", response_model=PredictResponse)
-def predict_endpoint(request: PredictRequest):
+def predict_endpoint(request: PredictRequest, token: str = Depends(verify_token)):
     """
     Classify a satellite image patch.
 
