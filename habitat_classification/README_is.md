@@ -1,8 +1,7 @@
 # Vistgerðaflokkun
 
 Flokkaðu íslenskar gervihnattamyndir í 71 vistgerð.
-
-## Fljótleg byrjun
+## TIl að byrja
 
 ```bash
 # Setja upp

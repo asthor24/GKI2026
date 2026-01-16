@@ -1,5 +1,7 @@
 
-# NLP Verkefni: Spá um næsta bæti
+# Gullplatan á Þingvöllum (BabyLM - NLP):
+
+Ríkisstjórnin er að undirbúa stafrænt tímahylki sem verður grafið á Þingvöllum. Ykkur hefur verið falið það hlutverk að reiða fram íslenskt mállíkan sem verður skrifað á gullplötu og geymt í tímahylkinu. Þetta mállíkan á að geyma eins mikla íslenska málþekkingu og hægt er svo hún geti verið endurheimt síðar ef framtíðin fer á versta veg. Hins vegar er sá hængur á að gullplatan rúmar aðeins eitt megabæti. Þið verðið að safna textagögnum og kenna litlu líkani eins mikla almenna málþekkingu og þið getið. Líkanið verður síðan metið á leynigögnum úr Risamálheildinni til að kanna íslenskugetu þess. Framtíð íslenskunnar er í ykkar höndum!
 
 **Markmið:** Byggja líkan sem spáir fyrir um næsta bæti í textaröð. Lægri bita-fyrir-bæti (bits-per-byte) þýðir betri þjöppun og hærri stig á stigatöflu.
 

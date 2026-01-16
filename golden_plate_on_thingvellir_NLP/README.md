@@ -1,4 +1,7 @@
-# NLP Challenge: Next-Byte Prediction
+# The Golden Plate at Þingvellir (BabyLM - NLP):
+
+The government is preparing a digital time capsule to be buried at Þingvellir. You have been tasked with creating an Icelandic language model that will be written on a golden plate and stored in the time capsule. This model should preserve as much Icelandic linguistic knowledge as possible so it can be recovered later if the future takes a turn for the worst. However, the catch is that the golden plate can only hold one megabyte. You must gather text data and teach a small model as much general linguistic knowledge as you can. The model will then be evaluated on hidden data from Risamálheild to test its Icelandic capabilities. The future of the Icelandic language is in your hands!
+
 
 **Goal:** Build a model that predicts the next byte in a sequence of text. Lower bits-per-byte = better compression = higher score on the leaderboard.
 
